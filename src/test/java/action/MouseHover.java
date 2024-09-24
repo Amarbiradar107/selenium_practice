@@ -11,13 +11,12 @@ public class MouseHover {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
-		Actions a = new Actions(driver);  
+		Actions a = new Actions(driver);
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		
+
 		WebElement HovrElement = driver.findElement(By.xpath("//button[@id='mousehover']"));
 		a.moveToElement(HovrElement).build().perform();
-		
-		
+
 	}
 
 }
