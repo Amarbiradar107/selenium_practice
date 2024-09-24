@@ -29,6 +29,8 @@ public class Frames {
 			WebElement SourceBox = driver.findElement(By.xpath("//div[@id='droppable']"));
 
 			a.dragAndDrop(TragetBox, SourceBox);
+			
+			driver.switchTo().defaultContent();
 
 		} catch (Exception e) {
 			System.out.println(e);
