@@ -13,12 +13,12 @@ import org.openqa.selenium.interactions.Actions;
 public class MoveToChildTabAndParent {
 
 	public static void main(String[] args) {
-		
+
 		WebDriver driver = new ChromeDriver();
 		Actions a = new Actions(driver);
 		// TODO Auto-generated method stub
 		try {
-			
+
 			driver.get("https://rahulshettyacademy.com/loginpagePractise/#");
 			WebElement ChildTabLink = driver.findElement(By.xpath("//a[@class='blinkingText']"));
 
@@ -33,20 +33,19 @@ public class MoveToChildTabAndParent {
 			driver.switchTo().window(ChildTab);
 
 			WebElement Text = driver.findElement(By.xpath("//p[@class='im-para red']"));
-			String Text1= driver.findElement(By.xpath("//p[@class='im-para red']")).getText().split("at")[1].trim().split(" ")[0];
-			
+			String Text1 = driver.findElement(By.xpath("//p[@class='im-para red']")).getText().split("at")[1].trim()
+					.split(" ")[0];
+
 			System.out.println(Text1);
-			
+
 			driver.switchTo().window(ParentTab);
-			
+
 			WebElement Username = driver.findElement(By.xpath("//input[@id='username']"));
-					Username.sendKeys(Text1);
-					
-		}
-		catch (Exception e) {
+			Username.sendKeys(Text1);
+
+		} catch (Exception e) {
 			System.out.println(e);// TODO: handle exception
-		}
-		finally{
+		} finally {
 			driver.quit();
 		}
 
